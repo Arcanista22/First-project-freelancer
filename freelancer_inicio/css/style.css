@@ -1,0 +1,250 @@
+:root {
+  --blanco: #ffffff;
+  --negro: #212121;
+  --primario: #ffc107;
+  --secundario: #0097a7;
+  --grisClaro: #a1aebb00;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-snap-type: y mandatory;
+}
+body {
+  font-size: 16px; /*1 rem = 10px*/
+  font-family: "Krub", sans-serif;
+  background-image: linear-gradient(to top, lightgrey 0%, var(--blanco) 100%);
+}
+h1 {
+  font-size: 3.8rem;
+}
+h2 {
+  font-size: 2.8rem;
+}
+h3 {
+  font-size: 1.8rem;
+}
+/* generales */
+.sombra {
+  box-shadow: 5px 0px 20px 1px rgba(0, 0, 0, 0.75);
+  background-color: var(--blanco);
+  padding: 2rem;
+  border-radius: .5rem;
+}
+.title {
+  padding-top: 3rem;
+  font-size: 3.2rem;
+  text-align: center;
+  font-size: 3.8rem;
+  font-weight: 700;
+}
+span {
+  font-size: 2rem;
+}
+/* Nav Bar */
+.nav-bar {
+  background-color: var(--secundario);
+  display: flex;
+  font-size: 2rem;
+  font-weight: bold;
+  flex-direction: column;
+  align-items: center;
+}
+.contenedor {
+  max-width: 120rem;
+  margin: 0 auto;
+  text-align: center;
+}
+@media (min-width: 480px) {
+  .nav-bar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .nav-bar a:hover {
+    background-color: var(--primario);
+    color: var(--negro);
+    display: block;
+  }
+}
+.background-nav {
+  background-color: var(--secundario);
+}
+.nav-bar a {
+  text-decoration: none;
+  color: var(--blanco);
+  padding: 1rem;
+}
+.nav-bar a:hover {
+  background-color: var(--primario);
+  color: #212121;
+}
+/* Section Hero */
+.hero {
+  background-image: url(../img/hero.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 45rem;
+  padding: 1.5rem;
+  position: relative;
+  text-align: center;
+  margin-bottom:2rem;
+}
+
+.contain-hero {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.contain-hero h2,
+.contain-hero p {
+  color: var(--blanco);
+}
+/* BOTONES */
+.button {
+  background-color: var(--secundario);
+  color: var(--blanco);
+  padding: 1rem 3rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-top: 6rem;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  border: none;
+}
+@media (max-width: 480px) {
+  .button {
+    width: 100%;
+  }
+}
+/* scroll inteligente */
+.servicios,
+.nav-bar,
+.formulario{
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+/* Servicios */
+.servicios{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /*33.3% 33.3% 33.3%*/
+  column-gap: 2rem;
+}
+@media (max-width: 748px) {
+   .servicios{
+    display: block;
+   }
+}
+.titulos-servicio{
+  font-weight: 400;
+  color: var(--secundario);
+}
+.iconos{
+  height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
+  background-color: var(--primario);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.servicio{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.servicio h3{
+  font-weight: 400;
+  color: var(--secundario);
+}
+.servicio p{
+  line-height: 2;
+  text-align: center;
+}
+
+/* formulario/servicios */
+
+.formulario{
+background-color: var(--negro);
+width: min( 60rem, 100% ); /*sirve para elegir entre los dos valores el menor, no hace falta media*/
+color: var(--blanco);
+padding: 3rem;
+margin: 0 auto;
+border-radius: .5rem;
+
+}
+.formulario fieldset{
+  border: none;
+}
+.formulario legend{
+  color: var(--primario);
+  font-weight: 700;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+.contenedor-formulario{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.campo{
+  margin-bottom: 2rem;
+}
+.campo label{
+  font-weight: bold;
+  margin-bottom: .5rem;
+  display: block;
+}
+.campo textarea{
+  height: 20rem;
+}
+.contenedor-campos{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto 20rem;
+  column-gap: 2rem;
+}
+.campo:nth-child(1) input{
+  width: 26rem;
+
+}
+@media (max-width: 768px) {
+   .campo:nth-child(3),
+   .campo:nth-child(4){
+    display: block;
+   }
+}
+.campo:nth-child(3),
+.campo:nth-child(4){
+  grid-column: 1 / 3;
+}
+.input-text{
+  width: 100%;
+  border: none;
+  padding: 1.5rem;
+  border-radius: .5rem;
+}
+.button:hover{
+  cursor: pointer;
+}
+.enviar .button{
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .enviar .button{
+    width: 20rem;
+  } 
+}
+/* footer */
+.footer{
+  text-align: center;
+}

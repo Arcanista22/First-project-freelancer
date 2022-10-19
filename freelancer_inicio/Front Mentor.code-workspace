@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "Front Mentor",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "profile-card-component-main"
+	}
+}
